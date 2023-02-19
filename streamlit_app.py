@@ -51,7 +51,7 @@ streamlit.write('The user entered ', fruit_choice)
 #import snowflake.connector
 def fruit_load_list():
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("SELECT * FROM PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
+    my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('from streamlit')")
     return my_cur.fetchall()
 #add a button to load the fruit
 if streamlit.button('Get fruit load list'):
@@ -66,4 +66,4 @@ streamlit.header("The fruit load list containts:")
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding ', add_my_fruit)
 
-my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('from streamlit')")
+#my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('from streamlit')")
